@@ -8,7 +8,7 @@ const claimTokens = async (tokenDistributor: ethers.Contract, addresses: Address
     try {
       const tx = await tokenDistributor.connect(wallet).claim({
         gasPrice,
-        gasLimit: '0x4C4B40',
+        gasLimit: '0xe4e1c0',
       });
       await tx.wait();
       console.log(`✅ Tokens claimed, address: ${wallet.address}`);
@@ -27,7 +27,7 @@ const sendToReceiver = async (arbitrumToken: ethers.Contract, addresses: Address
 
       const tx = await arbitrumToken.connect(wallet).transfer(receiver, balance, {
         gasPrice,
-        gasLimit: '0x4C4B40',
+        gasLimit: '0xe4e1c0',
       });
       console.log(`🎉 The hash of your transaction is: https://arbiscan.io/tx/${tx.hash}, Address: ${wallet.address}`);
       await tx.wait();
